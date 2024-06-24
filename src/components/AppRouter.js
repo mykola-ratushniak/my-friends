@@ -1,10 +1,10 @@
-import {Serianilla} from "../../framework/Serianilla.js";
-import {NotificationProvider} from "./NotificationProvider.js";
+import {useState, useRef} from "serianilla";
+import {NotificationProvider} from "./NotificationProvider";
 
 export const AppRouter = ({routes, defaultRoute}) => {
-    const [route, setRoute] = Serianilla.useState(defaultRoute);
-    const query = Serianilla.useRef('');
-    const popStateRef = Serianilla.useRef(null);
+    const [route, setRoute] = useState(defaultRoute);
+    const query = useRef('');
+    const popStateRef = useRef(null);
 
     const changeQuery = (newQuery) => {
         history.pushState('', '', '?' + newQuery);

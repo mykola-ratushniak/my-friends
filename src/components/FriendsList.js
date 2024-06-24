@@ -1,5 +1,5 @@
-import {FriendCard} from "./FriendCard.js";
-import {Loader} from "./ui/Loader.js";
+import {FriendCard} from "./FriendCard";
+import {Loader} from "./ui/Loader";
 
 export const FriendsList = ({friends, isLoading}) => {
     const imports = [FriendCard, Loader];

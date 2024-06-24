@@ -1,7 +1,7 @@
-import {Serianilla} from "../../../framework/Serianilla.js";
+import {useState} from "serianilla";
 
 export const Dropdown = ({options, value, onSelect}) => {
-    const [isOpen, setIsOpen] = Serianilla.useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const selectedOptionName = options.find(o => o.value === value).name;
 

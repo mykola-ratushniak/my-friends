@@ -1,8 +1,8 @@
-import {Serianilla} from "../../framework/Serianilla.js";
-import {Notification} from "./ui/Notification.js";
+import {useState} from "serianilla";
+import {Notification} from "./ui/Notification";
 
 export const NotificationProvider = ({component, locationContext}) => {
-    const [notificationInfo, setNotificationInfo] = Serianilla.useState({
+    const [notificationInfo, setNotificationInfo] = useState({
         isShown: false,
         title: '',
         message: '',

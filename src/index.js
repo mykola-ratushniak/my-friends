@@ -1,5 +1,5 @@
-import {App} from "./App.js";
-import {Serianilla} from "../framework/Serianilla.js";
+import {App} from "./App";
+import {render} from "serianilla";
 
 const root = document.getElementById('root');
-Serianilla.render(root, App);
+render(root, App);

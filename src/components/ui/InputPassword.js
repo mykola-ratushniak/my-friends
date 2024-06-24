@@ -1,7 +1,7 @@
-import {Serianilla} from "../../../framework/Serianilla.js";
+import {useState} from "serianilla";
 
 export const InputPassword = (props) => {
-    const [type, setType] = Serianilla.useState('password');
+    const [type, setType] = useState('password');
 
     const handleChange = e => {
         const text = e.target.value;

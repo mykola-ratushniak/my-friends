@@ -1,24 +1,24 @@
-import {Serianilla} from "../../framework/Serianilla.js";
-import {fetchFriends} from "../http/FriendsAPI.js";
-import {FriendsList} from "../components/FriendsList.js";
-import {Button} from "../components/ui/Button.js";
-import {InputText} from "../components/ui/InputText.js";
-import {Dropdown} from "../components/ui/Dropdown.js";
-import {ToggleButton} from "../components/ui/ToggleButton.js";
-import {logOut} from "../services/auth-service.js";
-import {SIGNUP_ROUTE} from "../utils/consts.js";
-// import {setCaretAtEnd} from "../utils/input.js";
+import {useState, useEffect, useRef} from "serianilla";
+import {fetchFriends} from "../http/FriendsAPI";
+import {FriendsList} from "../components/FriendsList";
+import {Button} from "../components/ui/Button";
+import {InputText} from "../components/ui/InputText";
+import {Dropdown} from "../components/ui/Dropdown";
+import {ToggleButton} from "../components/ui/ToggleButton";
+import {logOut} from "../services/auth-service";
+import {SIGNUP_ROUTE} from "../utils/consts";
+// import {setCaretAtEnd} from "../utils/input";
 
 export const Friends = ({locationContext, notificationContext}) => {
-    const [friends, setFriends] = Serianilla.useState([]);
-    const [pagesToDisplay, setPagesToDisplay] = Serianilla.useState(0);
-    const [sortValue, setSortValue] = Serianilla.useState('firstName');
-    // const [searchString, setSearchString] = Serianilla.useState('a');
-    const [isSortAsc, setIsSortAsc] = Serianilla.useState(true);
-    const [isLoading, setIsLoading] = Serianilla.useState(false);
-    // const [isSearchInputFocused, setIsSearchInputFocused] = Serianilla.useState(true);
+    const [friends, setFriends] = useState([]);
+    const [pagesToDisplay, setPagesToDisplay] = useState(0);
+    const [sortValue, setSortValue] = useState('firstName');
+    // const [searchString, setSearchString] = useState('a');
+    const [isSortAsc, setIsSortAsc] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
+    // const [isSearchInputFocused, setIsSearchInputFocused] = useState(true);
 
-    const searchInputRef = Serianilla.useRef(null);
+    const searchInputRef = useRef(null);
 
     const sortOptions = [
         {value: 'firstName', name: 'First name'},
@@ -27,7 +27,7 @@ export const Friends = ({locationContext, notificationContext}) => {
         {value: 'dobTimestamp', name: 'Age'},
     ]
 
-    Serianilla.useEffect(async () => {
+    useEffect(async () => {
         // if (isSearchInputFocused) {
         //     setCaretAtEnd(searchInputRef.current);
         //     setIsSearchInputFocused(false)

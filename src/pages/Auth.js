@@ -1,15 +1,15 @@
-import {Serianilla} from "../../framework/Serianilla.js";
-import {LoginForm} from "../components/LoginForm.js";
-import {SignUpForm} from "../components/SignUpForm.js";
-import {Button} from "../components/ui/Button.js";
-import {InputText} from "../components/ui/InputText.js";
-import {InputPassword} from "../components/ui/InputPassword.js";
-import {Loader} from "../components/ui/Loader.js";
-import {login, signUp} from "../services/auth-service.js";
-import {FRIENDS_ROUTE, LOGIN_ROUTE, SIGNUP_ROUTE} from "../utils/consts.js";
+import {useState} from "serianilla";
+import {LoginForm} from "../components/LoginForm";
+import {SignUpForm} from "../components/SignUpForm";
+import {Button} from "../components/ui/Button";
+import {InputText} from "../components/ui/InputText";
+import {InputPassword} from "../components/ui/InputPassword";
+import {Loader} from "../components/ui/Loader";
+import {login, signUp} from "../services/auth-service";
+import {FRIENDS_ROUTE, LOGIN_ROUTE, SIGNUP_ROUTE} from "../utils/consts";
 
 export const Auth = ({locationContext, notificationContext}) => {
-    const [isLoading, setIsLoading] = Serianilla.useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const isLogin = locationContext.pathname === LOGIN_ROUTE;
 

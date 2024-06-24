@@ -1,12 +1,12 @@
-import {Serianilla} from "../../../framework/Serianilla.js";
-import {cssTransitionInOut} from "../../utils/transition.js";
+import {useRef, useEffect} from "serianilla";
+import {cssTransitionInOut} from "../../utils/transition";
 
 export const Notification = (props) => {
-    const notificationRef = Serianilla.useRef(null);
+    const notificationRef = useRef(null);
 
     const TIMEOUT = 3000;
 
-    Serianilla.useEffect(() => {
+    useEffect(() => {
         if (props.isShown) {
             cssTransitionInOut(
                 notificationRef,

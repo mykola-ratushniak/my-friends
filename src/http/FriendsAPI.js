@@ -1,4 +1,4 @@
-import {API_RESULTS_COUNT, API_SEED, API_URL} from "../utils/consts.js";
+import {API_RESULTS_COUNT, API_SEED, API_URL} from "../utils/consts";
 
 export const fetchFriends = async (pageNumber = 1) => {
     const includes = ['name', 'phone', 'location', 'registered', 'picture', 'email', 'dob'];

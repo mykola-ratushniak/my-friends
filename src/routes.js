@@ -1,7 +1,7 @@
-import {Friends} from "./pages/Friends.js";
-import {Auth} from "./pages/Auth.js";
-import {NotFound} from "./pages/NotFound.js";
-import {FRIENDS_ROUTE, LOGIN_ROUTE, NOTFOUND_ROUTE, SIGNUP_ROUTE} from "./utils/consts.js";
+import {Friends} from "./pages/Friends";
+import {Auth} from "./pages/Auth";
+import {NotFound} from "./pages/NotFound";
+import {FRIENDS_ROUTE, LOGIN_ROUTE, NOTFOUND_ROUTE, SIGNUP_ROUTE} from "./utils/consts";
 
 export const publicRoutes = [
     {

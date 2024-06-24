@@ -1,14 +1,14 @@
-import {InputText} from "./ui/InputText.js";
-import {Serianilla} from "../../framework/Serianilla.js";
-import {InputPassword} from "./ui/InputPassword.js";
-import {Button} from "./ui/Button.js";
-import {validateFormData} from "../validation/auth.js";
+import {InputText} from "./ui/InputText";
+import {useState} from "serianilla";
+import {InputPassword} from "./ui/InputPassword";
+import {Button} from "./ui/Button";
+import {validateFormData} from "../validation/auth";
 
 export const SignUpForm = ({onValidSubmit}) => {
-    const [usernameInfo, setUsernameInfo] = Serianilla.useState({value: '', isValidated: false, errorMessage: ''});
-    const [emailInfo, setEmailInfo] = Serianilla.useState({value: '', isValidated: false, errorMessage: ''});
-    const [passwordInfo, setPasswordInfo] = Serianilla.useState({value: '', isValidated: false, errorMessage: ''});
-    const [repeatPasswordInfo, setRepeatPasswordInfo] = Serianilla.useState({value: '', isValidated: false, errorMessage: ''});
+    const [usernameInfo, setUsernameInfo] = useState({value: '', isValidated: false, errorMessage: ''});
+    const [emailInfo, setEmailInfo] = useState({value: '', isValidated: false, errorMessage: ''});
+    const [passwordInfo, setPasswordInfo] = useState({value: '', isValidated: false, errorMessage: ''});
+    const [repeatPasswordInfo, setRepeatPasswordInfo] = useState({value: '', isValidated: false, errorMessage: ''});
 
     const updateCallbackMap = new Map([
         ['username', setUsernameInfo],
